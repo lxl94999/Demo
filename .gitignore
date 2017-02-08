@@ -7,7 +7,6 @@ bin/
 
 # maven ignore
 target/
-*/target/
 *.jar
 *.war
 *.zip
@@ -20,6 +19,7 @@ target/
 .project
 .classpath
 .springBeans
+*/target/
 
 # idea ignore
 .idea/
