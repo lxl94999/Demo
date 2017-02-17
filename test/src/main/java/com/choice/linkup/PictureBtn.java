@@ -23,13 +23,15 @@ public class PictureBtn extends JButton implements ActionListener {
 	
 	public void actionPerformed(ActionEvent event) {
 		
+		String projectPath = getClass().getResource("/").getPath().toString();
+		
 		PictureBtn btn = (PictureBtn) event.getSource();
 		
 		System.out.println("x,y:"+btn.getX()+","+btn.getY());
 		btn.setVisible(false);
 		
 		Gif gif = new Gif();
-		gif.setIcon(new ImageIcon("D:\\study\\linkup\\tx1.png"));
+		gif.setIcon(new ImageIcon(projectPath+"img/tx1.png"));
 		gif.setTime(2000);
 		gif.setX(btn.getX());
 		gif.setY(btn.getY());

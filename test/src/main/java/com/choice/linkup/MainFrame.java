@@ -11,8 +11,8 @@ import javax.swing.JFrame;
 
 public class MainFrame extends JFrame implements Runnable {
 	
-	public String filePath = "D:\\study\\linkup\\di.png";
-	public String filePath2 = "D:\\study\\linkup\\y0.png";
+	public String filePath = "img/di.png";
+	public String filePath2 = "img/y0.png";
 	
 	//创建一个容器
 	public static Container ct;
@@ -21,9 +21,9 @@ public class MainFrame extends JFrame implements Runnable {
 	public static int imgHeight = 50;
 	
 	public static String[] gifPath = new String[]{
-		"D:\\study\\linkup\\tx1.png",
-		"D:\\study\\linkup\\tx2.png",
-		"D:\\study\\linkup\\tx3.png"
+		"img/tx1.png",
+		"img/tx2.png",
+		"img/tx3.png"
 	};
 	
 	public static volatile boolean flag = false;
@@ -31,6 +31,8 @@ public class MainFrame extends JFrame implements Runnable {
 	public static volatile List<Gif> list = new ArrayList<Gif>();
 	
 	public MainFrame() {
+		
+		String projectPath = getClass().getResource("/").getPath().toString();
 		
 		int windowWidth = (lineNum*imgHeight+(lineNum*2-4));
 		int windowHeight = (lineNum*imgHeight+20+(lineNum*2-1));
@@ -48,7 +50,7 @@ public class MainFrame extends JFrame implements Runnable {
 		for(int i=0;i<lineNum;i++) {
 			for(int j=0;j<lineNum;j++) {
 				
-				PictureBtn pic2 = new PictureBtn(new ImageIcon(filePath2));
+				PictureBtn pic2 = new PictureBtn(new ImageIcon(projectPath+filePath2));
 				pic2.setBounds(i*imgHeight, j*imgHeight, imgHeight, imgHeight);
 				pic2.setLayout(null);
 				
@@ -61,7 +63,7 @@ public class MainFrame extends JFrame implements Runnable {
 		for(int i=0;i<lineNum;i++) {
 			for(int j=0;j<lineNum;j++) {
 				
-				PictureBtn pic2 = new PictureBtn(new ImageIcon(filePath));
+				PictureBtn pic2 = new PictureBtn(new ImageIcon(projectPath+filePath));
 				pic2.setBounds(i*imgHeight, j*imgHeight, imgHeight, imgHeight);
 				pic2.setLayout(null);
 				
